@@ -33,3 +33,16 @@ bst_utils.disp_bst(trees[0])
 
 obj = Solution()
 print obj.hasPathSum(trees[0], 114)
+
+
+# Python list pass by reference
+# def test(list1, i):
+#     if i>0:
+#         list1.append(i)
+#         test(list1, i-1)
+#
+# test1 = []
+# for i in range(0,3):
+#     test(test1, i)
+#
+# print test1
