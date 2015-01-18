@@ -22,7 +22,7 @@ def build_tree(tree_vals):
     for i in range(0, len(tree_vals)):
         cur_node = None
         if tree_vals[i]!='#':
-            cur_node = TreeNode(tree_vals[i])
+            cur_node = TreeNode(int(tree_vals[i]))
         tree_nodes.append(cur_node)
 
     # print 'tree_nodes :', tree_nodes
@@ -86,7 +86,7 @@ def disp_bst(root):
             cur_node = queue.pop(0)
             if cur_node:
                 nothing_on_this_level = False
-                cur_level_output += cur_node.val
+                cur_level_output += str(cur_node.val)
                 cur_level_output += " "*child_width
                 queue.append(cur_node.left)
                 queue.append(cur_node.right)
