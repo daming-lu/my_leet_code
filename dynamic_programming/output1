@@ -1,0 +1,53 @@
+ start  1 , string left  aaaaaaaa  so far :  ['']
+  start  3 , string left  aaaaaa  so far :  ['', 'aa']
+   start  5 , string left  aaaa  so far :  ['', 'aa', 'aa']
+    start  7 , string left  aa  so far :  ['', 'aa', 'aa', 'aa']
+     start  9 , string left    so far :  ['', 'aa', 'aa', 'aa', 'aa']
+# adding  ['', 'aa', 'aa', 'aa', 'aa']
+# after pop  ['', 'aa', 'aa', 'aa']
+success for  aa
+    start  8 , string left  a  so far :  ['', 'aa', 'aa', 'aaa']
+failed for  a
+    start  9 , string left    so far :  ['', 'aa', 'aa', 'aaaa']
+# adding  ['', 'aa', 'aa', 'aaaa']
+# after pop  ['', 'aa', 'aa']
+success for  aaaa
+   start  6 , string left  aaa  so far :  ['', 'aa', 'aaa']
+    start  8 , string left  a  so far :  ['', 'aa', 'aaa', 'aa']
+    start  9 , string left    so far :  ['', 'aa', 'aaa', 'aaa']
+# adding  ['', 'aa', 'aaa', 'aaa']
+# after pop  ['', 'aa', 'aaa']
+success for  aaa
+   start  7 , string left  aa  so far :  ['', 'aa', 'aaaa']
+    start  9 , string left    so far :  ['', 'aa', 'aaaa', 'aa']
+# adding  ['', 'aa', 'aaaa', 'aa']
+# after pop  ['', 'aa', 'aaaa']
+success for  aa
+success for  aaaaaa
+  start  4 , string left  aaaaa  so far :  ['', 'aaa']
+   start  6 , string left  aaa  so far :  ['', 'aaa', 'aa']
+    start  8 , string left  a  so far :  ['', 'aaa', 'aa', 'aa']
+    start  9 , string left    so far :  ['', 'aaa', 'aa', 'aaa']
+# adding  ['', 'aaa', 'aa', 'aaa']
+# after pop  ['', 'aaa', 'aa']
+success for  aaa
+   start  7 , string left  aa  so far :  ['', 'aaa', 'aaa']
+    start  9 , string left    so far :  ['', 'aaa', 'aaa', 'aa']
+# adding  ['', 'aaa', 'aaa', 'aa']
+# after pop  ['', 'aaa', 'aaa']
+success for  aa
+   start  8 , string left  a  so far :  ['', 'aaa', 'aaaa']
+success for  aaaaa
+  start  5 , string left  aaaa  so far :  ['', 'aaaa']
+   start  7 , string left  aa  so far :  ['', 'aaaa', 'aa']
+    start  9 , string left    so far :  ['', 'aaaa', 'aa', 'aa']
+# adding  ['', 'aaaa', 'aa', 'aa']
+# after pop  ['', 'aaaa', 'aa']
+success for  aa
+   start  8 , string left  a  so far :  ['', 'aaaa', 'aaa']
+   start  9 , string left    so far :  ['', 'aaaa', 'aaaa']
+# adding  ['', 'aaaa', 'aaaa']
+# after pop  ['', 'aaaa']
+success for  aaaa
+success for  aaaaaaaa
+['aa aa aa aa', 'aa aa aaaa', 'aa aaa aaa', 'aa aaaa aa', 'aaa aa aaa', 'aaa aaa aa', 'aaaa aa aa', 'aaaa aaaa']
