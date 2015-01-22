@@ -3,20 +3,16 @@ __author__ = 'daming'
 class Solution:
     def workhorse(self, s, start_index, dict, ans_so_far, depth):
         l_len = len(depth)
-        print ' '*depth[0],
-        print 'start ', start_index, ', string left ', s[start_index:], ' so far : ', ans_so_far
         # print 'ans_so_far : ', ans_so_far, ', rest string : ', s[start_index:]
         if start_index == len(s):
             # print 'adding ', ans_so_far
             self.ans.append(list(ans_so_far))
-            print '# adding ', ans_so_far
-            ans_so_far.pop()
-            print '# after pop ', ans_so_far
+            # ans_so_far.pop()
             return True
 
         if self.my_list[start_index] == -1:
             # print '\tCut here, impossible once ', s[start_index:], ' left'
-            ans_so_far.pop()
+            # ans_so_far.pop()
             return False
 
         result = False
@@ -29,13 +25,12 @@ class Solution:
                 depth[0] += 1
                 tmp_result = self.workhorse(s, i, dict, ans_so_far, depth)
                 depth[0] -= 1
+                ans_so_far.pop()
                 result = result or tmp_result
-        ans_so_far.pop()
+        # ans_so_far.pop()
         if result:
-            print 'success for ', s[start_index:]
             self.my_list[start_index] = 1
         else:
-            print 'failed for ', s[start_index:]
             self.my_list[start_index] = -1
         return result
 
