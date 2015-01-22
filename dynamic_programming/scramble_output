@@ -1,0 +1,144 @@
+s1_seg :  abcdefghijklmn  ,  s2_seg :  efghijklmncadb
+s1_seg :  a  ,  s2_seg :  e
+a  !=  e
+s1_seg :  bcdefghijklmn  ,  s2_seg :  fghijklmncadb
+bcdefghijklmn  !=  abcdfghijklmn
+s1_seg :  a  ,  s2_seg :  b
+a  !=  b
+s1_seg :  bcdefghijklmn  ,  s2_seg :  efghijklmncad
+bcdefghijklmn  !=  acdefghijklmn
+s1_seg :  ab  ,  s2_seg :  ef
+ab  !=  ef
+s1_seg :  cdefghijklmn  ,  s2_seg :  ghijklmncadb
+cdefghijklmn  !=  abcdghijklmn
+s1_seg :  ab  ,  s2_seg :  db
+ab  !=  bd
+s1_seg :  cdefghijklmn  ,  s2_seg :  efghijklmnca
+cdefghijklmn  !=  acefghijklmn
+s1_seg :  abc  ,  s2_seg :  efg
+abc  !=  efg
+s1_seg :  defghijklmn  ,  s2_seg :  hijklmncadb
+defghijklmn  !=  abcdhijklmn
+s1_seg :  abc  ,  s2_seg :  adb
+abc  !=  abd
+s1_seg :  defghijklmn  ,  s2_seg :  efghijklmnc
+defghijklmn  !=  cefghijklmn
+s1_seg :  abcd  ,  s2_seg :  efgh
+abcd  !=  efgh
+s1_seg :  efghijklmn  ,  s2_seg :  ijklmncadb
+efghijklmn  !=  abcdijklmn
+s1_seg :  abcd  ,  s2_seg :  cadb
+s1_seg :  a  ,  s2_seg :  c
+a  !=  c
+s1_seg :  bcd  ,  s2_seg :  adb
+bcd  !=  abd
+s1_seg :  a  ,  s2_seg :  b
+a  !=  b
+s1_seg :  bcd  ,  s2_seg :  cad
+bcd  !=  acd
+s1_seg :  ab  ,  s2_seg :  ca
+ab  !=  ac
+s1_seg :  cd  ,  s2_seg :  db
+cd  !=  bd
+s1_seg :  ab  ,  s2_seg :  db
+ab  !=  bd
+s1_seg :  cd  ,  s2_seg :  ca
+cd  !=  ac
+s1_seg :  abc  ,  s2_seg :  cad
+abc  !=  acd
+s1_seg :  d  ,  s2_seg :  b
+d  !=  b
+s1_seg :  abc  ,  s2_seg :  adb
+abc  !=  abd
+s1_seg :  d  ,  s2_seg :  c
+d  !=  c
+s1_seg :  efghijklmn  ,  s2_seg :  efghijklmn
+s1_seg :  e  ,  s2_seg :  e
+s1_seg :  fghijklmn  ,  s2_seg :  fghijklmn
+s1_seg :  f  ,  s2_seg :  f
+s1_seg :  ghijklmn  ,  s2_seg :  ghijklmn
+s1_seg :  g  ,  s2_seg :  g
+s1_seg :  hijklmn  ,  s2_seg :  hijklmn
+s1_seg :  h  ,  s2_seg :  h
+s1_seg :  ijklmn  ,  s2_seg :  ijklmn
+s1_seg :  i  ,  s2_seg :  i
+s1_seg :  jklmn  ,  s2_seg :  jklmn
+s1_seg :  j  ,  s2_seg :  j
+s1_seg :  klmn  ,  s2_seg :  klmn
+s1_seg :  k  ,  s2_seg :  k
+s1_seg :  lmn  ,  s2_seg :  lmn
+s1_seg :  l  ,  s2_seg :  l
+s1_seg :  mn  ,  s2_seg :  mn
+s1_seg :  abcde  ,  s2_seg :  efghi
+abcde  !=  efghi
+s1_seg :  fghijklmn  ,  s2_seg :  jklmncadb
+fghijklmn  !=  abcdjklmn
+s1_seg :  abcde  ,  s2_seg :  ncadb
+abcde  !=  abcdn
+s1_seg :  fghijklmn  ,  s2_seg :  efghijklm
+fghijklmn  !=  efghijklm
+s1_seg :  abcdef  ,  s2_seg :  efghij
+abcdef  !=  efghij
+s1_seg :  ghijklmn  ,  s2_seg :  klmncadb
+ghijklmn  !=  abcdklmn
+s1_seg :  abcdef  ,  s2_seg :  mncadb
+abcdef  !=  abcdmn
+s1_seg :  ghijklmn  ,  s2_seg :  efghijkl
+ghijklmn  !=  efghijkl
+s1_seg :  abcdefg  ,  s2_seg :  efghijk
+abcdefg  !=  efghijk
+s1_seg :  hijklmn  ,  s2_seg :  lmncadb
+hijklmn  !=  abcdlmn
+s1_seg :  abcdefg  ,  s2_seg :  lmncadb
+abcdefg  !=  abcdlmn
+s1_seg :  hijklmn  ,  s2_seg :  efghijk
+hijklmn  !=  efghijk
+s1_seg :  abcdefgh  ,  s2_seg :  efghijkl
+abcdefgh  !=  efghijkl
+s1_seg :  ijklmn  ,  s2_seg :  mncadb
+ijklmn  !=  abcdmn
+s1_seg :  abcdefgh  ,  s2_seg :  klmncadb
+abcdefgh  !=  abcdklmn
+s1_seg :  ijklmn  ,  s2_seg :  efghij
+ijklmn  !=  efghij
+s1_seg :  abcdefghi  ,  s2_seg :  efghijklm
+abcdefghi  !=  efghijklm
+s1_seg :  jklmn  ,  s2_seg :  ncadb
+jklmn  !=  abcdn
+s1_seg :  abcdefghi  ,  s2_seg :  jklmncadb
+abcdefghi  !=  abcdjklmn
+s1_seg :  jklmn  ,  s2_seg :  efghi
+jklmn  !=  efghi
+s1_seg :  abcdefghij  ,  s2_seg :  efghijklmn
+abcdefghij  !=  efghijklmn
+s1_seg :  klmn  ,  s2_seg :  cadb
+klmn  !=  abcd
+s1_seg :  abcdefghij  ,  s2_seg :  ijklmncadb
+abcdefghij  !=  abcdijklmn
+s1_seg :  klmn  ,  s2_seg :  efgh
+klmn  !=  efgh
+s1_seg :  abcdefghijk  ,  s2_seg :  efghijklmnc
+abcdefghijk  !=  cefghijklmn
+s1_seg :  lmn  ,  s2_seg :  adb
+lmn  !=  abd
+s1_seg :  abcdefghijk  ,  s2_seg :  hijklmncadb
+abcdefghijk  !=  abcdhijklmn
+s1_seg :  lmn  ,  s2_seg :  efg
+lmn  !=  efg
+s1_seg :  abcdefghijkl  ,  s2_seg :  efghijklmnca
+abcdefghijkl  !=  acefghijklmn
+s1_seg :  mn  ,  s2_seg :  db
+mn  !=  bd
+s1_seg :  abcdefghijkl  ,  s2_seg :  ghijklmncadb
+abcdefghijkl  !=  abcdghijklmn
+s1_seg :  mn  ,  s2_seg :  ef
+mn  !=  ef
+s1_seg :  abcdefghijklm  ,  s2_seg :  efghijklmncad
+abcdefghijklm  !=  acdefghijklmn
+s1_seg :  n  ,  s2_seg :  b
+n  !=  b
+s1_seg :  abcdefghijklm  ,  s2_seg :  fghijklmncadb
+abcdefghijklm  !=  abcdfghijklmn
+s1_seg :  n  ,  s2_seg :  e
+n  !=  e
+False
