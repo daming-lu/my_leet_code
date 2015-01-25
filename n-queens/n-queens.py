@@ -28,17 +28,17 @@ class Solution:
         ans = []
         ans_matrices = []
         self.placeNQueens(n, 0, [], ans)
-        for ans_ind in range(len(ans)):
-            ans_matrix = [['.' for c in range(n)] for r in range(n)]
-            cur_queens = ans[ans_ind]
-            for xy in cur_queens:
-                ans_matrix[xy[0]][xy[1]] = 'Q'
-            ans_string = []
-            for r in range(n):
-                ans_string.append("".join(ans_matrix[r]))
-            ans_matrices.append(ans_string)
+        # for ans_ind in range(len(ans)):
+        #     ans_matrix = [['.' for c in range(n)] for r in range(n)]
+        #     cur_queens = ans[ans_ind]
+        #     for xy in cur_queens:
+        #         ans_matrix[xy[0]][xy[1]] = 'Q'
+        #     ans_string = []
+        #     for r in range(n):
+        #         ans_string.append("".join(ans_matrix[r]))
+        #     ans_matrices.append(ans_string)
 
-        return ans_matrices
+        return len(ans)
 
 obj = Solution()
-print obj.solveNQueens(2)
+print obj.solveNQueens(4)
