@@ -1,12 +1,10 @@
 __author__ = 'daming'
 
 def doSum(a,b,carry):
-    print a, " + ", b, " carry = ", carry
     result = ord(a)-ord('0')+ord(b)-ord('0')+ord(carry)-ord('0')
     result = int(result)
     carry = result/10
     result = result%10
-    print 'answer : ', (str(result),str(carry))
     return (str(result),str(carry))
 
 def addTwoStrings(a, b):
@@ -54,5 +52,5 @@ def solution(N):
     return sum([1 for x in product if x=='1'])
 
 # print addTwoStrings("123","123123")
-solution(6)
+print solution(6)
 
