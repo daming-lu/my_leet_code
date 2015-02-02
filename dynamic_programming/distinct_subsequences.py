@@ -22,3 +22,4 @@ class Solution:
 obj = Solution()
 print obj.numDistinct("abb", "b")
 
+
