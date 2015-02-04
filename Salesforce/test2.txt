@@ -1,0 +1,11 @@
+6
+This is some ordinary text.
+<BEGIN> This is included in the BEGIN tag </BEGIN>
+<START>
+Here's some stuff
+and so is this
+more stuff. </START>
+2
+This has a null tag <>
+And an extra line after the error
+0
