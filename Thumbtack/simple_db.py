@@ -1,54 +1,92 @@
 __author__ = 'daming'
 
 import fileinput
-import copy
+
 class TransactionBlock:
     def __init__(self):
-        self.my_map= {'t1':1, 't2':1}
-        self.my_reverse_map = {1:2}
+        self.my_map= {}
+        self.my_reverse_map = {}
 
-    def  __str__(self):
-        result = ""
-        # print 'my_map: '
-        result += '\nmy_map: \n'
-        for key in self.my_map:
-            # print '\t', key, ' => ', self.my_map[key]
-            result += ('\n'+key+ ' => '+ str(self.my_map[key])+'\n')
-        # print '\nmy_reverse_map: \n'
-        result += '\nmy_reverse_map: \n'
-        for key in self.my_reverse_map:
-            # print '\t', key, ' => ', self.my_reverse_map[key]
-            result += ('\n'+str(key)+ ' => '+ str(self.my_reverse_map[key])+'\n')
-        return result
+    def set_key(self, key, val):
+        prev_val = None
+        if key in self.my_map:
+            prev_val = self.my_map[key]
+        self.my_map[key] = val
 
-    def __deepcopy__(self, memo):
-        newone = TransactionBlock()
-        newone.__dict__.update(self.__dict__)
-        for key in self.my_map:
-            newone.my_map[key] = self.my_map[key]
+        if val in self.my_reverse_map:
+            self.my_reverse_map[val] += 1
+        else:
+            self.my_reverse_map[val] = 1
 
-        for key in self.my_reverse_map:
-            newone.my_reverse_map[key] = self.my_reverse_map[key]
-        return newone
+        if prev_val!=None:
+            self.my_reverse_map[prev_val] -= 1
+
+    def get_key(self, key):
+        if key in self.my_map:
+            return self.my_map[key]
+        return "NULL"
+
+    def unset_key(self, key):
+        if key in self.my_map:
+            its_val = self.my_map[key]
+            del self.my_map[key]
+            self.my_reverse_map[its_val] -= 1
+
+    def num_equal_to(self,num):
+        if num in self.my_reverse_map:
+            return self.my_reverse_map[num]
+        return 0
 
 class SimpleDataBase:
     def __init__(self):
         self.transactions = []
 
+    def deepCopyTransBlock(self, newone, oldone):
+        for key in oldone.my_map:
+            newone.my_map[key] = oldone.my_map[key]
+
+        for key in oldone.my_reverse_map:
+            newone.my_reverse_map[key] = oldone.my_reverse_map[key]
+
     def process(self):
         basic_trans_block = TransactionBlock()
-        clone1 = copy.deepcopy(basic_trans_block)
-        print '\nbasic_trans_block ',basic_trans_block
-        print '\nclone1 ',clone1
-
         self.transactions.append(basic_trans_block)
-        print '\nOver here:\n'
+
         for line in fileinput.input():
-            print line, ' * '
-            
-        print '\n\n'
-
-
+            pieces = line.split()
+            # SET a 10
+            if len(pieces)==3 and pieces[0]=='SET':
+                self.transactions[-1].set_key(pieces[1], pieces[2])
+            # GET a
+            elif pieces[0] == 'GET':
+                print self.transactions[-1].get_key(pieces[1])
+            # UNSET a
+            elif pieces[0] == 'UNSET':
+                self.transactions[-1].unset_key(pieces[1])
+            # NUMEQUALTO 10
+            elif pieces[0] == 'NUMEQUALTO':
+                print self.transactions[-1].num_equal_to(pieces[1])
+            # BEGIN
+            elif pieces[0] == 'BEGIN':
+                newone = TransactionBlock()
+                self.deepCopyTransBlock(newone, self.transactions[-1])
+                self.transactions.append(newone)
+            # ROLLBACK
+            elif pieces[0] == 'ROLLBACK':
+                if len(self.transactions)==1:
+                    print 'NO TRANSACTION'
+                else:
+                    self.transactions.pop()
+            # COMMIT
+            elif pieces[0] == 'COMMIT':
+                if len(self.transactions)==1:
+                    print 'NO TRANSACTION'
+                else:
+                    self.deepCopyTransBlock(self.transactions[0], self.transactions[-1])
+                    self.transactions = self.transactions[0:1]
+            # END
+            elif pieces[0] == 'END':
+                return
 
 obj = SimpleDataBase()
 obj.process()
