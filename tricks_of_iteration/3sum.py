@@ -25,9 +25,9 @@ class Solution:
             self.twoSum(num, i+1, target, ans_so_far, ans)
             ans_so_far.pop()
 
-        final_ans = []
-        for  e in ans:
-            final_ans.append(list(e))
+        final_ans = [list(e) for e in ans]
+        # for  e in ans:
+        #     final_ans.append(list(e))
         return final_ans
 
 
