@@ -4,25 +4,15 @@ import time
 class Solution:
     # @return an integer
     def maxArea(self, height):
-        ind_val = []
-        for i in range(1, len(height)+1):
-            ind_val.append((i, height[i-1]))
-
-        ind_val.sort(key=lambda x: x[1])
-
-        cur_min_ind = ind_val[-1][0]
-        cur_max_ind = ind_val[-1][0]
+        il, ir = 0, len(height)-1
         cur_max_area = 0
 
-        for i in range(len(ind_val)-1, -1, -1):
-            cur_area = ind_val[i][1] * (max(abs(ind_val[i][0]-cur_min_ind), abs(ind_val[i][0]-cur_max_ind)))
-            if cur_area > cur_max_area:
-                cur_max_area = cur_area
-
-            if ind_val[i][0] < cur_min_ind:
-                cur_min_ind = ind_val[i][0]
-            if ind_val[i][0] > cur_max_ind:
-                cur_max_ind = ind_val[i][0]
+        while il < ir:
+            cur_max_area = max(cur_max_area, (ir-il) * min(height[il], height[ir]))
+            if height[il] < height[ir]:
+                il += 1
+            else:
+                ir -= 1
 
         return cur_max_area
 
