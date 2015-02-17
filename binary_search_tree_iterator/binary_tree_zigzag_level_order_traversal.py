@@ -14,43 +14,32 @@ class Solution:
     def zigzagLevelOrder(self, root):
         if root is None:
             return []
-
         queue = [root]
-        cur_row_count = 1
+        cur_row_elems = 1
         cur_row_num = 1
-
         ans = []
-        nextRowHasElemToDisp = True
-
-        while len(queue) > 0 and nextRowHasElemToDisp:
+        while len(queue) > 0:
             itr = 0
             cur_row = []
-            hasElemToDisp = False
-            # print "\n",
-
-            while itr < cur_row_count:
+            next_row_elems = 0
+            while itr < cur_row_elems:
                 cur_node = queue.pop(0)
-                if cur_node is None:
-                    queue.append(None)
-                    queue.append(None)
-                else:
-                    if cur_node.left is not None or cur_node.right is not None:
-                        nextRowHasElemToDisp = True
-                    queue.append(cur_node.left)
-                    queue.append(cur_node.right)
-                    hasElemToDisp = True
+                if cur_node is not None:
+                    if cur_node.left is not None:
+                        next_row_elems += 1
+                        queue.append(cur_node.left)
+                    if cur_node.right is not None:
+                        next_row_elems += 1
+                        queue.append(cur_node.right)
 
                     if cur_row_num%2==0:
                         cur_row.insert(0,cur_node.val)
                     else:
                         cur_row.append(cur_node.val)
                 itr += 1
-
-            cur_row_count *= 2
-            if hasElemToDisp is False:
-                break
             ans.append(cur_row)
             cur_row_num += 1
+            cur_row_elems = next_row_elems
         return ans
 
 def construct_BST(val_list):
