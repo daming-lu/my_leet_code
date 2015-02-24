@@ -10,7 +10,6 @@ class Solution:
                 my_stack.append((i,'('))
             else:
                 if len(my_stack)>0 and my_stack[-1][1] == '(':
-                    last = my_stack.pop()
                     if len(my_stack) == 0:
                         cur_max = max(cur_max, i+1)
                     else:
