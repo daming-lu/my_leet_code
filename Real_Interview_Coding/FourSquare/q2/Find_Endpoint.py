@@ -17,17 +17,6 @@ class Solution:
         tokens.append(path[last_index:])
         return tokens
 
-    def dispHashRecur(self, hash, num_tabs):
-
-        for k in hash:
-            if type(hash[k]) is dict:
-                print num_tabs*"\t",
-                print hash[k], " > ",
-                self.dispHashRecur(hash[k], num_tabs+1)
-            else:
-                print " @ ", hash[k]
-
-
     def buildHash(self, file_name):
         try:
             file_handle = open(file_name, "r")
@@ -49,7 +38,7 @@ class Solution:
             curTokenNode[""] = pieces[1]
 
         self.findEndpoint()
-        return 
+        return ""
 
     def matchToken(self,tokens, curInd, curTokenNode):
         if curInd == len(tokens):
@@ -76,9 +65,9 @@ class Solution:
             curTokenNode = self.pathTokenHash
             result = self.matchToken(dir_tokens,0,curTokenNode)
             if result == False:
-                print '\t','404'
+                print '404'
             else:
-                print '\t',result
+                print result
         return []
 
 obj = Solution()

@@ -1,29 +1,11 @@
-Config:
-/ rootEndpoint
-/user userEndpoint
-/user/friends userFriendsEndpoint
-/user/lists userListsEndpoint
-/user/X userEndpoint
-/user/X/friends userFriendsEndpoint
-/user/X/lists userListsEndpoint
-/user/X/lists/X userListIdEndpoint
-/X/friends userFriendsEndpoint
-/X/lists userListsEndpoint
-/settings settingsEndpoint
+My solution is first to build a tree structure using hash to store each path token in the url.
+Then for each input url, try to parse it using the existing token tree. If it can parse, return
+the Endpoint, else return '404'. Since hash lookup takes O(1), the time complexity of my solution is
+O(n), where n is the number of tokens in the input url.
 
-Input:
-/
-/user
-/user/friends
-/user/123
-/user/123/friends
-/user/123/friends/zzz
-/user/friends/friends
-/abc/lists
-/settings
-/aaa/bbb
+A sample run is shown below:
 
-Output:
+$ python Find_Endpoint.py config1.txt < in1.txt
 rootEndpoint
 userEndpoint
 userFriendsEndpoint
@@ -34,4 +16,3 @@ userFriendsEndpoint
 userListsEndpoint
 settingsEndpoint
 404
-
