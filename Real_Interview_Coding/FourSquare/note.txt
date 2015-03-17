@@ -1,0 +1,5 @@
+The O(N^2) solution is trival. My solution runs in O(NlogN). I first sort the intervals based on their start point. Then loop through the intervals, if the current interval has no overlapping with the prev one, then a hole is created; otherwise, we need to see if the overlapping two intervals (cur and prev) can be merged into a larger one. If yes, we merge and continue; otherwise, the prev one covers the current one and we don't need to merge.
+
+$ python Merging_Intervals.py < input1.txt 
+[(7, 8), (12, 18)]
+
