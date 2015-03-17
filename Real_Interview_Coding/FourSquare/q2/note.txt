@@ -1,0 +1,37 @@
+Config:
+/ rootEndpoint
+/user userEndpoint
+/user/friends userFriendsEndpoint
+/user/lists userListsEndpoint
+/user/X userEndpoint
+/user/X/friends userFriendsEndpoint
+/user/X/lists userListsEndpoint
+/user/X/lists/X userListIdEndpoint
+/X/friends userFriendsEndpoint
+/X/lists userListsEndpoint
+/settings settingsEndpoint
+
+Input:
+/
+/user
+/user/friends
+/user/123
+/user/123/friends
+/user/123/friends/zzz
+/user/friends/friends
+/abc/lists
+/settings
+/aaa/bbb
+
+Output:
+rootEndpoint
+userEndpoint
+userFriendsEndpoint
+userEndpoint
+userFriendsEndpoint
+404
+userFriendsEndpoint
+userListsEndpoint
+settingsEndpoint
+404
+

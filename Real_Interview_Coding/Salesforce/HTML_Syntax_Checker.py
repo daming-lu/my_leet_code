@@ -33,7 +33,7 @@ class HTMLSyntaxChecker:
                 if cur_tag[0]=='/':
                     if len(self.my_stack)==0:
                         possible_error = ErrorMessage('no matching begin tag for '+ cur_tag[1:])
-                        break;
+                        break
                     matching_left = self.my_stack.pop()
                     if matching_left != cur_tag[1:]:
                         possible_error = ErrorMessage('expect '+'</'+matching_left+'>')
