@@ -39,9 +39,7 @@ class Solution:
         for line in iter(file_handle):
             line = line.strip()
             pieces = line.split(' ')
-            print 'pieces : ', pieces
             dir_tokens = self.getPathTokens(pieces[0])
-            print 'dir_tokens : ', dir_tokens
             curTokenNode = self.pathTokenHash
             for i in range(0, len(dir_tokens)):
                 token = dir_tokens[i]
@@ -49,10 +47,9 @@ class Solution:
                     curTokenNode[token] = {}
                 curTokenNode = curTokenNode[token]
             curTokenNode[""] = pieces[1]
-        print ' self.pathTokenHash : ', self.pathTokenHash
-        # print '\ndispHashRecur\n'
-        # self.dispHashRecur(self.pathTokenHash,0)
+
         self.findEndpoint()
+        return 
 
     def matchToken(self,tokens, curInd, curTokenNode):
         if curInd == len(tokens):
@@ -73,14 +70,15 @@ class Solution:
 
     def findEndpoint(self):
         for line in fileinput.input('-'):
-            print 'line : ',line.strip()
+            if line is None:
+                continue
             dir_tokens = self.getPathTokens(line.strip())
             curTokenNode = self.pathTokenHash
             result = self.matchToken(dir_tokens,0,curTokenNode)
             if result == False:
-                print '404'
+                print '\t','404'
             else:
-                print result
+                print '\t',result
         return []
 
 obj = Solution()
