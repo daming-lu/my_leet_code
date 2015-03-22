@@ -1,0 +1,52 @@
+
+table USER_CHECKINS
+
+USER_ID     VENUE_ID        CHECKIN_TIME    EXPIRE_TIME
+1             1             1416633999      1416644799
+2             1             1416613999      1416624799
+3             2             1416613999      1416624799
+
+
+1) Where is user A right now?
+
+Input : user A ID (uid), current unix time epoch (cur_timestamp)
+
+SQL :
+
+SELECT VENUE
+FROM USER_CHECKINS
+WHERE USER_ID = uid
+AND EXPIRE_TIME > cur_timestamp
+
+2) What users are at venue X right now?
+Input : venue X ID (vid), current unix time epoch (cur_timestamp)
+
+SELECT USER_ID
+FROM USER_CHECKINS
+WHERE VENUE_ID = vid
+AND EXPIRE_TIME > cur_timestamp
+
+If we want to find the full profile for each user, we can run the SQL as below (say, we have another
+table storing all user profiles)
+
+SELECT *
+FROM USER
+WHERE USER_ID =
+    (
+        SELECT USER_ID
+        FROM USER_CHECKINS
+        WHERE VENUE_ID = vid
+        AND EXPIRE_TIME > cur_timestamp
+    )
+
+For the 2 rules :
+1. A user can only be at one venue at a time. If user A checks in at venue X and then at
+venue Y, they are no longer at venue X.
+2. A check­in only “lasts” for 3 hours. If user A checks in at venue X and then does
+nothing for 3 hours, they are no longer at venue X.
+
+Rule 2 is already enabled by adding EXPIRE_TIME column.
+Rule 1 can be done by doing UPDATE for each user check-in. So venue Y will overwrite venue X when user A
+checks in Y after X. If the check-in is the 1st for user A, we can use INSERT, or we give a default venue
+for all registered users. That way, we can use UPDATE ubiquitously.
+
