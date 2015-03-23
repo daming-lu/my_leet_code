@@ -16,7 +16,7 @@ class Solution:
     # @return a list of lists of integers
     def permute(self, num):
         ans = []
-        self.workhorse([],num, ans)
+        self.workhorse([], num, ans)
         return ans
 
 obj = Solution()
