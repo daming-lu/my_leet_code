@@ -1,0 +1,13 @@
+The HackerRank website had some issues with testing the code and cost me a lot of time.
+I wrapped this up 10 mins after the deadline.
+
+A sample run is :
+
+$ python Redfin_Coding_Challenge.py < input000.txt
+2
+
+0
+
+2
+
+613
