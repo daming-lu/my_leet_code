@@ -6,13 +6,13 @@ class TreeNode:
         self.right = None
 
     def __repr__(self):
-        result = "val: "+self.val
-        if self.left:
-            result += ", left: "+self.left.val
-        if self.right:
-            result += ", right: "+self.right.val
-        return result
-
+        result = "val: "+ str(self.val)
+        # if self.left:
+        #     result += ", left: "+ str(self.left.val)
+        # if self.right:
+        #     result += ", right: "+ str(self.right.val)
+        # return result + " | "
+        return str(self.val)
 
 def build_tree(tree_vals):
     # print 'tree_vals : ', tree_vals
